@@ -1,0 +1,171 @@
+/* Body Styling */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F4F4F4;
+  font-family: Arial, sans-serif;
+}
+
+/* Main Text Styling */
+#main-text {
+  font-size: 150px; /* Original size for the main font */
+  text-transform: uppercase;
+  transform: scaleY(3.5); /* Stretched text */
+  color: black;
+  text-align: center; /* Center-align text */
+  cursor: pointer;
+}
+
+/* Hover Text Styling */
+#hover-text {
+  position: absolute;
+  font-size: 12px;
+  color: black;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+  pointer-events: none;
+  display: block; /* Ensure it's visible */
+}
+
+/* Styling for Other Fonts (half-size of original) */
+#main-text[style*="Arial Black"],
+#main-text[style*="Courier New"],
+#main-text[style*="Bungee"],
+#main-text[style*="Rubik Mono One"] {
+  font-size: 75px; /* Half the size of the main font */
+  text-align: center; /* Ensure center alignment */
+}
+
+/* Prevent text selection for the title */
+#main-text {
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none;    /* For Firefox */
+  -ms-user-select: none;     /* For Internet Explorer/Edge */
+  user-select: none;          /* Standard */
+}
+
+/* Navigation Container */
+nav {
+  width: 100%; /* Full width to distribute links horizontally */
+  display: flex;
+  justify-content: space-evenly; /* Evenly spaced links across the width */
+  position: absolute;
+  bottom: 10%; /* Positioned between title and bottom of the screen */
+}
+
+/* Navigation Link Styling */
+nav a {
+  font-family: 'Times New Roman', Times, serif; /* Bold Times New Roman */
+  font-size: 18px;
+  font-weight: bold; /* Make the font bold */
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: #0000EE; /* Internet hyperlink blue */
+  pointer-events: none; /* Disable initially */
+  opacity: 0; /* Hide initially */
+  transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
+
+/* Make Links Visible After Animation */
+nav a.visible {
+  opacity: 1;
+  pointer-events: all; /* Enable links */
+}
+
+/* Typing Animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+#hover-text {
+  overflow: hidden; /* Hide text overflow */
+  white-space: nowrap; /* Keep text on a single line */
+  animation: typing 0.1s steps(40, end); /* Fast typing effect */
+  position: absolute;
+  font-size: 12px;
+  color: black;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+  pointer-events: none;
+  display: block;
+  user-select: none; /* Prevent text selection */
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out; /* Smooth resizing */
+}
+
+/* General Body Styling */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #F4F4F4;
+  font-family: 'Times New Roman', Times, serif; /* Unified font */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Stack elements vertically */
+}
+
+/* Header Text Styling */
+.header-text {
+  font-size: 48px; /* Slightly smaller header */
+  font-weight: bold;
+  margin-top: 10vh; /* Raised a bit */
+  margin-bottom: 20px; /* Space below the header */
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+}
+
+
+/* Bio Text Styling (About Page) */
+.bio-text {
+  font-size: 14px;
+  color: black;
+  text-align: center;
+  max-width: 600px; /* Keep bio centered and constrained */
+  line-height: 1.5; /* Improve readability */
+  margin-top: 10px;
+}
+
+/* Image Grid Styling (Work Page) */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 15px; /* Add space between images */
+  width: 80%; /* Constrain grid width */
+  margin-top: 20px;
+}
+
+.image-grid img {
+  width: 100%; /* Ensure images fit within their cells */
+  height: auto;
+  object-fit: cover; /* Ensure consistent image display */
+  border: 2px solid black;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.image-grid img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* About Page Image Styling */
+.about-image {
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+  width: 150px; /* Adjust image size */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 5vh; /* Add spacing from the top */
+  margin-bottom: 20px; /* Add spacing below the image */
+}
